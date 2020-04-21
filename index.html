@@ -5,34 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <ul class="nav nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" href="/highScores.html">View High Scores</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1">Time: </a>
+        </li>
+    </ul>
+
     <div class="container">
-        <header>
-            <div id="home" class="header">
-                <div class="score"><a href="/highScores.html">View High Scores</a></div>
-                <div class="counter">Time:</div>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Coding Quiz Challenge</h1>
+                <p class="card-text">Try to answer the following code-related questions within the time limit. Keep in
+                    mind that incorrect answers will penalize your score/time by 10 seconds!</p>
+                <div class="col text-center">
+                    <a href="#" type="submit" class="btn">Start Quiz</a>
+                </div>
             </div>
-        </header>
-        <div class="wrapper" class="col-md-12 text-center">
-            <h1>Coding Quiz Challenge</h1>
-        </div>
-        <div id="info" class="col-md-12 text-center">Try to answer the following code-related questions within the time
-            limit. Keep in mind
-            that
-            incorrect
-            answers
-            will penalize your score/time by 10 seconds!</div>
-        <div class="button">
-            <button id="btn" class="btn btn-primary" type="button">
-                Start Quiz
-            </button>
         </div>
     </div>
-    </div>
+
+    <script src="assets/javascript/script.js"></script>
+
 </body>
-<script src="assets/javascript/script.js"></script>
 
 </html>
