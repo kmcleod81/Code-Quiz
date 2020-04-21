@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.card {
+    border: none;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: bold;
+
+}
+
+.btn {
+   
+    background-color: purple;
+    color:white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: medium;
+}
