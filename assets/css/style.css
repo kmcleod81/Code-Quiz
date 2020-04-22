@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+.nav-link {
+    color: purple;
+}
+
 .nav-item {
     margin-top: 20px;;
 }
@@ -31,4 +35,8 @@ h1 {
     padding: 5px;
     border-radius: 5px;
     font-size: medium;
+}
+
+#start {
+    color: white;
 }
