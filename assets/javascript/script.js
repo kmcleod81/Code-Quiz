@@ -68,3 +68,34 @@ function startBtn() {
     setTime();
     getQuestion();
 }
+
+function getQuestion() {
+    // generates question to populate
+    var nextQuestion = questions[currentQIndex];
+    var questionElTitle = document.querySelector("#question");
+    questionElTitle.textContent = nextQuestion.title;
+
+    // generates option 1 to populate
+    var button1El = document.querySelector("#option1");
+    button1El.textContent = nextQuestion.choices[0];
+    button1El.onclick = checkAnswer;
+
+    // generates option 2 to populate
+    var button2El = document.querySelector("#option2");
+    button2El.textContent = nextQuestion.choices[1];
+    button2El.onclick = checkAnswer;
+
+    // generates option 3 to populate
+    var button3El = document.querySelector("#option3");
+    button3El.textContent = nextQuestion.choices[2];
+    button3El.onclick = checkAnswer;
+
+    // generates option 4 to populate
+    var button4El = document.querySelector("#option4");
+    button4El.textContent = nextQuestion.choices[3];
+    button4El.onclick = checkAnswer;
+}
+
+function checkAnswer(element) {
+    alert(element);
+}
