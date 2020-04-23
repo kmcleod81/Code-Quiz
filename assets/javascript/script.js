@@ -1,10 +1,48 @@
 /// variable for pulling the time id from html
 var timeEl = document.querySelector("#time");
 
+//variable for starting the timer with the start button
+var startEl = document.querySelector("#start");
+var questionCardEl = document.querySelector("#questions-card");
+var startCardEl = document.querySelector("#start-card");
+var questions = [
+    {
+        title: "q1",
+        choices: ["option", "option 2", "option 3", "option 4"],
+        answer: "option 2"
+    },
+    {
+        title: "q2",
+        choices: ["option", "option 2", "option 3", "option 4"],
+        answer: "option 2"
+    },
+    {
+        title: "q3",
+        choices: ["option", "option 2", "option 3", "option 4"],
+        answer: "option 2"
+    },
+    {
+        title: "q4",
+        choices: ["option", "option 2", "option 3", "option 4"],
+        answer: "option 2"
+    },
+    {
+        title: "q5",
+        choices: ["option", "option 2", "option 3", "option 4"],
+        answer: "option 2"
+    },
+    {
+        title: "q6",
+        choices: ["option", "option 2", "option 3", "option 4"],
+        answer: "option 2"
+    }
+]
+
 // set seconds to what it starts at
 var secondsLeft = 60;
-
-//start of function
+// question index stars at zero to go through loop
+var currentQIndex = 0;
+//start of function timer function
 function setTime() {
     var timerInterval = setInterval(function () {
         //deduction of seconds from the timer
@@ -20,4 +58,13 @@ function setTime() {
     }, 1000);
 }
 
-setTime();
+//start timer when start button is clicked function
+startEl.onclick = startBtn;
+function startBtn() {
+    //when start button is clicked, hide the intro information located in startCard id on home page
+    startCardEl.classList.add("hide");
+    //when start button is clicked, show the new questionCard id on home page
+    questionCardEl.classList.remove("hide");
+    setTime();
+    getQuestion();
+}

@@ -40,3 +40,8 @@ h1 {
 #start {
     color: white;
 }
+
+.hide {
+    display: none;
+}
+
