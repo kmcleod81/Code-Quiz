@@ -7,35 +7,30 @@ var questionCardEl = document.querySelector("#questions-card");
 var startCardEl = document.querySelector("#start-card");
 var questions = [
     {
-        title: "q1",
-        choices: ["option", "option 2", "option 3", "option 4"],
-        answer: "option 2"
+        title: "Commonly used data types DO NOT inclide:",
+        choices: ["1. Strings", "2. Booleans", "3. Alerts", "4. Numbers"],
+        answer: "3. Alerts"
     },
     {
-        title: "q2",
-        choices: ["option", "option 2", "option 3", "option 4"],
-        answer: "option 2"
+        title: "The condition in an if/else statement is enclosed with:",
+        choices: ["1. Quotes", "2. Curly Brackets", "3. Parenthesis", "4. Square Brackets"],
+        answer: "3. Parenthesis"
     },
     {
-        title: "q3",
-        choices: ["option", "option 2", "option 3", "option 4"],
-        answer: "option 2"
+        title: "Arrays in JavaScript can be used to store:",
+        choices: ["1. Numbers & Strings", "2. Other Arrays", "3. Booleans", "4. All of the Above"],
+        answer: "All of the Above"
     },
     {
-        title: "q4",
-        choices: ["option", "option 2", "option 3", "option 4"],
-        answer: "option 2"
+        title: "String values mst be enclosed with _____ when being assigned to variables",
+        choices: ["1. Commas", "2. Curly Brackets", "3. Quotes", "4. Parenthesis"],
+        answer: "3. Quotes"
     },
     {
-        title: "q5",
-        choices: ["option", "option 2", "option 3", "option 4"],
-        answer: "option 2"
+        title: "A very useful tool used during web development and debugging in printing content to the debugger is:",
+        choices: ["1. JavaScript", "2. Terminal/Bash", "3. For Loops", "4. Console log"],
+        answer: "4. Console log"
     },
-    {
-        title: "q6",
-        choices: ["option", "option 2", "option 3", "option 4"],
-        answer: "option 2"
-    }
 ]
 
 // set seconds to what it starts at

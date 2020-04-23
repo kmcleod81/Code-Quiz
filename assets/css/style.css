@@ -45,6 +45,13 @@ h1 {
     margin: 2px;
     max-width: 150px;
 }
+#question {
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
 
 #start {
     color: white;
