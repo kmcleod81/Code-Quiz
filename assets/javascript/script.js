@@ -6,9 +6,13 @@ var answerArea = document.querySelector("#answerArea");
 //element for results to populate
 var resultEl = document.querySelector("#result-card");
 //element to save initials
-var saveBtnEl = document.querySelector("#saveBtn");
+var saveEl = document.querySelector("#saveBtn");
 //element to add initials
 var initialsEl = document.querySelector("#initials");
+//element for Score
+var scoreEl = document.querySelector("#score");
+
+var timerInterval;
 
 //variable for starting the timer with the start button
 var startEl = document.querySelector("#start");
@@ -18,27 +22,27 @@ var questions = [
     {
         title: "Commonly used data types DO NOT inclide:",
         choices: ["1. Strings", "2. Booleans", "3. Alerts", "4. Numbers"],
-        answer: 2,
+        answer: 3,
     },
     {
         title: "The condition in an if/else statement is enclosed with:",
         choices: ["1. Quotes", "2. Curly Brackets", "3. Parenthesis", "4. Square Brackets"],
-        answer: 2,
+        answer: 3,
     },
     {
         title: "Arrays in JavaScript can be used to store:",
         choices: ["1. Numbers & Strings", "2. Other Arrays", "3. Booleans", "4. All of the Above"],
-        answer: 3,
+        answer: 4,
     },
     {
         title: "String values mst be enclosed with _____ when being assigned to variables",
         choices: ["1. Commas", "2. Curly Brackets", "3. Quotes", "4. Parenthesis"],
-        answer: 2,
+        answer: 3,
     },
     {
         title: "A very useful tool used during web development and debugging in printing content to the debugger is:",
         choices: ["1. JavaScript", "2. Terminal/Bash", "3. For Loops", "4. Console log"],
-        answer: 3,
+        answer: 4,
     },
 ]
 
@@ -48,7 +52,7 @@ var secondsLeft = 75;
 var currentQIndex = 0;
 //start of function timer function
 function setTime() {
-    var timerInterval = setInterval(function () {
+    timerInterval = setInterval(function () {
         //deduction of seconds from the timer
         secondsLeft--;
         //what I want to populate to the page in textContent
@@ -102,11 +106,13 @@ function getQuestion() {
 
 function checkAnswer(element) {
     var userSelection = element.target.outerText;
+    var userSelectNum = parseInt(userSelection.split(".")[0])
     //check to see if the answer is correct
-    if (userSelection === questions[currentQIndex].answer) {
+    if (userSelectNum === questions[currentQIndex].answer) {
         answerArea.textContent = "Correct Answer!";
     } else {
         answerArea.textContent = "Wrong Answer!";
+        secondsLeft -= 15;
     }
     //increment curent question index
     currentQIndex++;
@@ -117,16 +123,23 @@ function checkAnswer(element) {
         getQuestion();
     } else {
         /// there are no more questions
+        endQuiz();
 
     }
 }
 
 function endQuiz() {
-    clearInterval();
+    //when quiz is over, stop timer
+    clearInterval(timerInterval);
+    //when quiz is over, hide the questions and buttons card
     questionCardEl.classList.add("hide");
-    //when start button is clicked, show the new questionCard id on home page
-    questionCardEl.classList.remove("hide");
+    //when quiz is over, show the result element
+    resultEl.classList.remove("hide");
+    //when quiz is over, show the score
+    scoreEl.textContent = "Score: " + secondsLeft;
 }
+
+
 
 // when the user accesses the page, they are shoen an intro message
 // in the HTML, we could have a <div> with the intro</div>
