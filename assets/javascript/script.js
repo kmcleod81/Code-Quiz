@@ -27,7 +27,7 @@ var questions = [
     {
         title: "The condition in an if/else statement is enclosed with:",
         choices: ["1. Quotes", "2. Curly Brackets", "3. Parenthesis", "4. Square Brackets"],
-        answer: 3,
+        answer: 2,
     },
     {
         title: "Arrays in JavaScript can be used to store:",
@@ -77,6 +77,9 @@ function startBtn() {
     getQuestion();
 }
 
+
+
+
 function getQuestion() {
     // generates question to populate
     var nextQuestion = questions[currentQIndex];
@@ -104,11 +107,14 @@ function getQuestion() {
     button4El.onclick = checkAnswer;
 }
 
+
+
 function checkAnswer(element) {
     var userSelection = element.target.outerText;
     //grabbing info from userSelection and stopping it at the "." to use the number before it
     var userSelectNum = parseInt(userSelection.split(".")[0])
     //check to see if the answer is correct
+
     if (userSelectNum === questions[currentQIndex].answer) {
         answerArea.textContent = "Correct Answer!";
     } else {
@@ -145,15 +151,13 @@ saveEl.onclick = saveBtn;
 function saveBtn() {
     //put the highScores into local storage if the save button is clicked, or don't when there's nothing
     var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-    var initials = initialsEl.textContent;
+    var initials = initialsEl.value;
     var newScore = {
-        score: secondsLeft, initials: initials
+        score: secondsLeft, initials: initials,
     }
     highScores.push(newScore);
     localStorage.setItem("highScores", JSON.stringify(highScores));
     location.href = "highScores.html";
-
-
 }
 
 
