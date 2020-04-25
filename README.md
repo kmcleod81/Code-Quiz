@@ -1,11 +1,12 @@
 # code-quiz
 
-![Algorithm schema](./assets/images/)
+![Algorithm schema](./assets/images/codeQuiz.png)
 
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Authors](#authors)
+* [Link to Page](#link-to-page)
 
 ## General info
 A timed quiz on JavaScript fundamentals that stores high scores
@@ -17,7 +18,7 @@ This app runs in the browser and features dynamically updated with:
 
 * HTML
 * CSS
-* JavaScript
+* JavaScript using JSON & local storage
     
 
 ## Authors
