@@ -18,10 +18,11 @@ h1 {
 }
 
 .btn {
-   
+   margin-top: 10px;
     background-color: purple;
     color:white;
     padding: 5px;
     border-radius: 5px;
     font-size: medium;
 }
+

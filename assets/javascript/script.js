@@ -35,7 +35,7 @@ var questions = [
         answer: 4,
     },
     {
-        title: "String values mst be enclosed with _____ when being assigned to variables",
+        title: "String values must be enclosed with _____ when being assigned to variables",
         choices: ["1. Commas", "2. Curly Brackets", "3. Quotes", "4. Parenthesis"],
         answer: 3,
     },
@@ -106,6 +106,7 @@ function getQuestion() {
 
 function checkAnswer(element) {
     var userSelection = element.target.outerText;
+    //grabbing info from userSelection and stopping it at the "." to use the number before it
     var userSelectNum = parseInt(userSelection.split(".")[0])
     //check to see if the answer is correct
     if (userSelectNum === questions[currentQIndex].answer) {
@@ -139,6 +140,19 @@ function endQuiz() {
     scoreEl.textContent = "Score: " + secondsLeft;
 }
 
+//when the save button is clicked after entering ititials
+saveEl.onclick = saveBtn;
+function saveBtn() {
+    //put the highScores into local storage if the save button is clicked, or don't when there's nothing
+    var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    var initials = initialsEl.textContent;
+    var newScore = {
+        score: secondsLeft, initials: initials
+    }
+    highScores.push(newScore);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    location.href = "highScores.html";
+}
 
 
 // when the user accesses the page, they are shoen an intro message
