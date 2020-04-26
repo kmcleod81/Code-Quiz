@@ -29,13 +29,17 @@ h1 {
 }
 
 .btn {
-   
     background-color: purple;
     color:white;
     padding: 5px;
     border-radius: 5px;
     font-size: medium;
     border: none;
+}
+
+
+.btn:hover {
+    background-color: plum;
 }
 
 .questionBtn {
@@ -45,6 +49,7 @@ h1 {
     margin: 2px;
     max-width: 150px;
 }
+
 #question {
     font-size: large;
     font-weight: bold;
@@ -52,9 +57,12 @@ h1 {
     margin-bottom: 10px;
 }
 
-
 #start {
     color: white;
+}
+
+#start:hover {
+    background-color: plum;
 }
 
 .hide {
@@ -64,3 +72,23 @@ h1 {
 #alertBtn {
     display: none;
 }
+
+#answerArea {
+    color: grey;
+}
+
+#initials {
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+#saveBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 150px;
+}
+
+a:hover {
+    background-color: plum;
+  }

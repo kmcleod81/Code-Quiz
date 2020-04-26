@@ -1,6 +1,6 @@
+// Global variables:
 /// variable for pulling the time id from html
 var timeEl = document.querySelector("#time");
-
 //element for answerArea to populate
 var answerArea = document.querySelector("#answerArea");
 //element for results to populate
@@ -13,6 +13,7 @@ var initialsEl = document.querySelector("#initials");
 var scoreEl = document.querySelector("#score");
 
 var timerInterval;
+var interval;
 
 //variable for starting the timer with the start button
 var startEl = document.querySelector("#start");
@@ -48,6 +49,7 @@ var questions = [
 
 // set seconds to what it starts at
 var secondsLeft = 75;
+var answerPaneShow = 2000;
 // question index stars at zero to go through loop
 var currentQIndex = 0;
 //start of function timer function
@@ -116,9 +118,9 @@ function checkAnswer(element) {
     //check to see if the answer is correct
 
     if (userSelectNum === questions[currentQIndex].answer) {
-        answerArea.textContent = "Correct Answer!";
+        showAnswerPane("Correct Answer!");
     } else {
-        answerArea.textContent = "Wrong Answer!";
+        showAnswerPane("Wrong Answer!");
         secondsLeft -= 15;
     }
     //increment curent question index
@@ -134,6 +136,22 @@ function checkAnswer(element) {
 
     }
 }
+
+// function for showing the answer pane
+function showAnswerPane(value) {
+    clearInterval(interval);
+    interval = setInterval(function () {
+        answerPaneShow -= 100;
+        answerArea.textContent = value;
+        //if statement saying if counter is zero stop the timer
+        if (answerPaneShow === 0) {
+            answerArea.textContent = "";
+            clearInterval(interval);
+        }
+        // counting in milliseconds
+    }, 100);
+}
+
 
 function endQuiz() {
     //when quiz is over, stop timer
@@ -157,42 +175,7 @@ function saveBtn() {
     }
     highScores.push(newScore);
     localStorage.setItem("highScores", JSON.stringify(highScores));
+    // redirect the user to the high scores page which will display all of the high scores
     location.href = "highScores.html";
 }
 
-
-// when the user accesses the page, they are shoen an intro message
-// in the HTML, we could have a <div> with the intro</div>
-//users can click the start button, which will start the game timer
-
-// - variable to store the current count, set to 0 by default
-// - variable to store the array of questions
-// - variable to store the index of the current question they are answering
-
-// - array of possible answers (list)
-// - question (string)
-// - correct answer (number, index of the answer from the array of possible answers)
-
-// users can click the start button
-// - hide the intro div
-// - create a setInterval of 75000 ms.
-// - update the current count to 75
-// every time the interval runs, we need to decrement the current count by 1, re-render what the curren count is on the screen
-// render the first question
-// using DOM manipulation, create a new element (document.createElement) with the question info, and display it on the screen (appendChild)
-// use a variable to store current question
-
-// use data attributes to call buttons, corrosponds to answers
-
-// when a user clicks on one of those questions, determine if it is correct or incorrect, display the next question, and display the status if thier answer (coreect/incorrect for  short period of time)
-
-
-// create a function called end game
-
-// end condition
-// user anseers all the questions OR
-// time runs out
-
-// When the game extends, allow the user to enter thier initials and store thier Score
-
-// redirect the user tot the high scores page which will display all of the high scores

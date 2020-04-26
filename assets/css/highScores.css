@@ -12,9 +12,19 @@
 }
 
 h1 {
+    text-align: center;
     font-size: xx-large;
     font-weight: bold;
 
+}
+
+ol#highScores {
+    margin-left: 46%;
+    margin-top: 10px;;
+}
+
+li::marker {
+    text-align: center;
 }
 
 .btn {
@@ -25,3 +35,22 @@ h1 {
     font-size: medium;
 }
 
+#clear.btn {
+    color:white;
+}
+
+#clear.btn:hover {
+    background-color:plum;
+}
+
+#back.btn {
+    color:white;
+}
+
+#back.btn:hover {
+    background-color:plum;
+}
+
+a:hover {
+    color: plum;
+}
