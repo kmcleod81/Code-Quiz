@@ -19,6 +19,7 @@ This app runs in the browser and features dynamically updated with:
 * HTML
 * CSS
 * JavaScript using JSON & local storage
+* jQuery 
     
 
 ## Authors
