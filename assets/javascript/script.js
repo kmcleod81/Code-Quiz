@@ -21,7 +21,7 @@ var questionCardEl = document.querySelector("#questions-card");
 var startCardEl = document.querySelector("#start-card");
 var questions = [
     {
-        title: "Commonly used data types DO NOT inclide:",
+        title: "Commonly used data types DO NOT include:",
         choices: ["1. Strings", "2. Booleans", "3. Alerts", "4. Numbers"],
         answer: 3,
     },
